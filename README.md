@@ -3,7 +3,7 @@
 Automatic Compensation Code README
 This code implements an automatic compensation system for financial transactions. The compensation is performed based on a grouping criterion defined by the "classification code" column in a CSV input file.
 
-Requirements
+# Requirements
 The code requires the following Python libraries:
 
 pandas
@@ -13,14 +13,14 @@ os
 time
 Make sure you have these libraries installed before running the code.
 
-File Structure
+# File Structure
 The code assumes the following file structure in the working directory:
 
 entries.csv: Input CSV file that contains the financial transaction data. It should have the columns credits, debits, classification code, reference, document, and date.
 
 result.csv: Output CSV file where the compensation results will be stored.
 
-Code Functionality
+# Code Functionality
 The code performs the following steps:
 
 Loads the financial transaction data from the entries.csv file into a DataFrame using the pandas library.
@@ -45,11 +45,10 @@ Upon finishing the processing of all classification codes, the contents of resul
 
 The total execution time in seconds is printed.
 
-Execution
+# Execution
 To run the code, make sure you have the entries.csv and result.csv files in the same folder as the code file. Then, simply execute the code and observe the results in the result.csv file. The execution time will be displayed in the console.
 
-
-Mathematical Problem Description
+# Mathematical Problem Description
 The mathematical problem behind the code is the well-known "Subset Sum Problem." Given a set of numbers (in this case, the credits and debits of financial transactions), the goal is to find a subset whose sum matches a target value (in this case, the total credits).
 
 In the code, the Subset Sum Problem is formulated as a binary integer linear programming problem. The decision variables, represented by the variables x and y, determine whether a transaction is included in the subset or not. The objective function maximizes the sum of credits, while the constraint ensures that the sum of debits equals the sum of credits.
